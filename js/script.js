@@ -55,5 +55,4 @@ function copiar(elementId){
     document.execCommand("copy");
     document.body.removeChild(tempTextarea);
     alert("Texto copiado al portapapeles");
-    mensaje.value= "";
 }
