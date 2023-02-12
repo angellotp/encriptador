@@ -45,6 +45,15 @@ function desencriptar(stringDesencriptada){
     return stringDesencriptada
 }
 
-function copiar(){
-    navigator.clipboard.writeText(this.result.innerHTML)
+function copiar(elementId){
+    var tempTextarea = document.createElement("textarea");
+    tempTextarea.style.position = "fixed";
+    tempTextarea.style.opacity = 0;
+    tempTextarea.value = document.getElementById(elementId).value;
+    document.body.appendChild(tempTextarea);
+    tempTextarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempTextarea);
+    alert("Texto copiado al portapapeles");
+    mensaje.value= "";
 }
